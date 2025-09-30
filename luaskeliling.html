@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menghitung Luas dan Keliling Bujur Sangkar</title>
+<script type="text/javascript">
+    function hitungluaskeliling(){
+        let sisi = parseFloat(document.getElementById("sisi").value);
+
+        if (isNaN(sisi) || sisi <= 0) {
+            alert("Masukkan angka yang valid untuk sisi bujur sangkar!");
+            return;
+        }
+
+        let luas = sisi * sisi;
+        let keliling = 4 * sisi;
+
+        document.getElementById("luas").value = luas;
+        document.getElementById("keliling").value = keliling;
+    }
+
+    function resetForm(){
+        document.getElementById("sisi").value = "";
+        document.getElementById("luas").value = "";
+        document.getElementById("keliling").value = "";
+    }
+</script>
+</head>
+<body>
+   <form>
+    <h4>Menghitung Luas dan Keliling Bujur Sangkar</h4>
+      <table>
+         <tr>
+              <td>Sisi</td>
+              <td>:</td>
+              <td><input type="text" id="sisi" name="sisi"></td>
+         </tr>
+         <tr>
+              <td>Luas</td>
+              <td>:</td>
+              <td><input type="text" id="luas" name="luas" readonly size="5"></td>
+         </tr>
+         <tr>
+              <td>Keliling</td>
+              <td>:</td>
+              <td><input type="text" id="keliling" name="keliling" readonly size="5"></td>
+         </tr>
+         <tr>
+              <td></td>
+              <td></td>
+              <td>
+                  <input type="button" value="Hitung" onclick="hitungluaskeliling()">
+                  <input type="button" value="Reset" onclick="resetForm()">
+              </td>
+         </tr>
+      </table>
+    </form>
+</body>
+</html>
